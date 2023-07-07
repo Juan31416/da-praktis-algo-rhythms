@@ -7,19 +7,27 @@
 
 function isValidSubsequence(array, sequence) {
   // O(n) time | O(n) space
-  const filteredArray = array.filter((curr) => sequence.includes(curr));
-  return sequence.every((curr, index) => curr === filteredArray[index]);
+  const checkingArray = [];
+
+  array.forEach((curr) => {
+    if (sequence.includes(curr)) {
+      checkingArray.push(curr);
+    }
+  });
+
+  return sequence.every((curr, index) => curr === checkingArray[index]);
 }
 
 exports.isValidSubsequence = isValidSubsequence;
 
 /**
- * Solution 2
- * Filter approach
+ * Solution 1
+ * Brute force approach
  * Time: O(n)
- * Space: O(n)
- * Filter the first array to only include elements that are in the second array
- * If the filtered array is equal to the second array, return true
+ * Space: O(1)
+ * Iterate through the first array and for each number, check if it is in the second array
+ * If it is, add it to a checking array
+ * If the checking array is equal to the second array, return true
  * Otherwise, return false
  * Edge cases: empty array, array with one element, array with two elements
  * Assumptions: a single element counts as a subsequence of an array
