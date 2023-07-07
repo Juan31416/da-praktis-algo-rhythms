@@ -9,6 +9,8 @@ function sortedSquaredArray(array) {
   // O(n log n) time | O(n) space
   const poweredArray = array.map((curr) => curr * curr).sort((a, b) => a - b);
   return poweredArray;
+
+  // return array.map((curr) => curr * curr).sort((a, b) => a - b);
 }
 
 exports.sortedSquaredArray = sortedSquaredArray;
