@@ -24,7 +24,7 @@ function transposeMatrix(matrix){
 }
 
 // Do not edit the line bellow.
-export.transposeMatrix = transposeMatrix;
+exports.transposeMatrix = transposeMatrix;
 
 /** 
  * Solution 1
