@@ -9,9 +9,9 @@ function transposeMatrix(matrix){
   const newYsize = matrix[0].length;
   const newXsize = matrix.length;
  
-  if(newXSize <= 1 && newYSize <= 1) return matrix;
+  if(newXsize <= 1 && newYsize <= 1) return matrix;
   
-  const newTransposedMatrix = [...Array(newYsize)].map(e => Array(newXSize));
+  const newTransposedMatrix = [...Array(newYsize)].map(e => Array(newXsize));
 
   matrix.forEach((rowElement, yIndex) => {
     rowElement.forEach((individualElement, xIndex) => {
