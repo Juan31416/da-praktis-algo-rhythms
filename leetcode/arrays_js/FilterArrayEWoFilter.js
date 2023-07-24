@@ -7,8 +7,5 @@
  */
 
 var filter = function (arr, fn) {
-  return arr.reduce(
-    (acc, curr, idx) => (fn(curr, idx) ? [...acc, curr] : acc),
-    []
-  );
+  return arr.filter(fn);
 };
