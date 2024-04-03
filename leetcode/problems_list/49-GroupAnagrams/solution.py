@@ -18,4 +18,4 @@ class Solution:
             else:
                 grouped_anagrams[sorted_string] = len(ans)
                 ans.append([curr])
-        return ans
+            return ans
