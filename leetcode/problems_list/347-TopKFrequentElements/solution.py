@@ -4,6 +4,9 @@
 :rtype: List[int]
 """
 
+# Time complexity: O(nlogn)
+# Space complexity: O(n)
+
 
 class Solution(object):
     def topKFrequent(self, nums, k):
