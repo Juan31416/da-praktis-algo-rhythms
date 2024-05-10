@@ -2,7 +2,41 @@
  * @param {string} s
  * @return {boolean}
  */
+
+// Solution 2: Using stack & checking each paretheses character
+// Time complexity is O(n) where n is the length of the string
+// Space complexity is O(n) where n is the length of the string
+
+var isValid = function (s) {
+  if (s.length % 2 !== 0) return false;
+
+  const pMap = { ")": "(", "]": "[", "}": "{" };
+  let checkStack = [];
+
+  for (i in s) {
+    if (s[i] in pMap) {
+      if (
+        checkStack.length > 0 &&
+        checkStack[checkStack.length - 1] === pMap[s[i]]
+      ) {
+        checkStack.pop();
+      } else {
+        return false;
+      }
+    } else {
+      checkStack.push(s[i]);
+    }
+  }
+
+  return checkStack.length === 0;
+};
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ 
 // Solution 1: Using stack & checking each paretheses character
+
 // Time complexity is O(n) where n is the length of the string
 // Space complexity is O(n) where n is the length of the string
 var isValid = function (s) {
@@ -49,3 +83,4 @@ var isValid = function (s) {
 
   return validation.every((curr) => curr === 0);
 };
+*/
