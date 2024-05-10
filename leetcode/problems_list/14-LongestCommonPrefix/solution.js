@@ -3,7 +3,7 @@
  * @return {string}
  */
 // FIRST SOLUTION
-// Time complexity: O(n * m) where n is the number of strings and m is the length of the shortest string
+// Time complexity: O(n) where n is the number of strings
 // Space complexity: O(m) where m is the length of the shortest string
 
 var longestCommonPrefix = function (strs) {
