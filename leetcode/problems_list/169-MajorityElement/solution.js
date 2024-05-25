@@ -50,7 +50,7 @@ var majorityElement = function (nums) {
   return candidate;
 };
 
-// Solution 1
+// Solution 1: Counting w/ Map
 // Time complexity: O(n)
 // Space complexity: O(n)
 
