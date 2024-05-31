@@ -3,6 +3,52 @@
  * @param {number} target
  * @return {number}
  */
+// Solution 4 - Using Two Pointers - For loop
+// Time Complexity: O(nlogn)
+// Space Complexity: O(1)
+
+var countPairs = function (nums, target) {
+  nums.sort((a, b) => a - b);
+  let count = 0;
+
+  for (let i = 0, j = nums.length - 1; i < j; ) {
+    if (nums[i] + nums[j] < target) {
+      count += j - i;
+      i++;
+    } else {
+      j--;
+    }
+  }
+  return count;
+};
+
+// Solution 3 - Using Binary Search
+// Time Complexity: O(nlogn)
+// Space Complexity: O(1)
+
+var countPairs = function (nums, target) {
+  nums.sort((a, b) => a - b);
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    let left = i + 1;
+    let right = nums.length - 1;
+
+    while (left <= right) {
+      let mid = Math.floor((left + right) / 2);
+
+      if (nums[i] + nums[mid] < target) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+
+    count += right - i;
+  }
+
+  return count;
+};
 
 // Solution 2 - Using Two Pointers
 // Time Complexity: O(n)
