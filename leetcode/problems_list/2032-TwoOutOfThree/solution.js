@@ -4,6 +4,28 @@
  * @param {number[]} nums3
  * @return {number[]}
  */
+
+// Solution 3
+// Time complexity: O(n)
+// Space complexity: O(n)
+
+var twoOutOfThree = function (nums1, nums2, nums3) {
+  let arr = [];
+  for (val of nums1) {
+    if (nums2.includes(val) || nums3.includes(val)) {
+      arr.push(val);
+    }
+  }
+  for (val of nums2) {
+    if (nums1.includes(val) || nums3.includes(val)) {
+      arr.push(val);
+    }
+  }
+  arr = new Set(arr);
+  arr = Array.from(arr);
+  return arr;
+};
+
 // Solution 2
 // Time complexity: O(n)
 // Space complexity: O(n)
